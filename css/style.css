@@ -24,7 +24,32 @@ main, .inst, header {
 
 
 }
+#state {
+    display: flex;
+    margin: auto;
+}
+.form1, .currentInstStatus {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
+    
+}
+#submit {
+    height: 20px;
+    width: 40px;
+    background-color: lightgray;
+    border: black solid .5px;
+}
+.currentInstStatus {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start !important;
+    width: 200px;
 
+}
 h2 {
     width: 75%;
     font-size: 3rem;

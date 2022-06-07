@@ -15,8 +15,10 @@
     <main>
         <section id="4500" class="inst">
             <h2>4500</h2>
-            
-            <form action="/action_page.php">
+            <section id="state">
+            <section class="form1">
+                
+            <form>
                 <label for="stat">Instrument Status:</label>
                 <select id="stat" name="stat">
                   <option value="available">Available</option>
@@ -24,20 +26,34 @@
                   <option value="reserved">Reserved</option>
                   <option value="maint">Maintenance</option>
                 </select>
-                <input type="submit">
-              </form>
-              <form>
+                
+              <br><br>
+            
                   <label for="date">Run Date: </label>
                   <input type="date" id="date" name="date"></input>
-              </form>
-              <form>
+              <br><br>
+            
                 <label for="dateend">Estimated End of Run: </label>
                 <input type="date" id="dateend" name="dateend"></input>
-            </form>
-              <form>
+            <br><br>
+            
                   <label for="init">User Initials</label>
                   <input type="text" id="init" name="init">
+                  <br><br>
+                  <div id="submit">Submit<div>
               </form>
+            </section>
+            <section class="currentInstStatus" id="4500InstStat">
+                <h3>Current Status: </h3>
+                <span id="instStat"></span>
+                <h3>Run Date: </h3>
+                <span id="runDate"></span>
+                <h3>End Date: </h3>
+                <span id="endDate"></span>
+                <h3>User Initials: </h3>
+                <span id="initE"></span>
+            </section>
+        </section>
         </section>
         <section id="5500" class="inst">
             <h2>5500</h2>
