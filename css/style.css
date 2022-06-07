@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    
+}
+html {
+    font-size: 62.5%;
+}
+header {
+    justify-content: center;
+}
+main, .inst, header {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.inst {
+    border: 1px solid black;
+    width: 50%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+
+}
+
+h2 {
+    width: 75%;
+    font-size: 3rem;
+    
+}
