@@ -19,9 +19,13 @@ function formFill() {
 
 function statusLight() {
     if (document.getElementById('instStat').innerText === 'available'){
-        document.getElementById('4500InstStat').style.backgroundColor = 'green'
+        document.getElementById('4500InstStat').style.backgroundColor = 'lightgreen'
+    }else if(document.getElementById('instStat').innerText === 'maint'){
+        document.getElementById('4500InstStat').style.backgroundColor = 'skyblue'
+    }else if(document.getElementById('instStat').innerText === 'reserved'){
+        document.getElementById('4500InstStat').style.backgroundColor = '#FFFF8F'
     }else{
-        document.getElementById('4500InstStat').style.backgroundColor = 'red'
+        document.getElementById('4500InstStat').style.backgroundColor = 'salmon'
         
     }
 }
@@ -47,9 +51,13 @@ function formFillB() {
 
 function statusLightB() {
     if (document.getElementById('instStatB').innerText === 'available'){
-        document.getElementById('5500InstStat').style.backgroundColor = 'green'
+        document.getElementById('5500InstStat').style.backgroundColor = 'lightgreen'
+    }else if(document.getElementById('instStatB').innerText === 'maint'){
+        document.getElementById('5500InstStat').style.backgroundColor = 'skyblue'
+    }else if(document.getElementById('instStatB').innerText === 'reserved'){
+        document.getElementById('5500InstStat').style.backgroundColor = '#FFFF8F'
     }else{
-        document.getElementById('5500InstStat').style.backgroundColor = 'red'
+        document.getElementById('5500InstStat').style.backgroundColor = 'salmon'
         
     }
 }
@@ -75,9 +83,13 @@ function formFillC() {
 
 function statusLightC() {
     if (document.getElementById('instStatC').innerText === 'available'){
-        document.getElementById('40002InstStat').style.backgroundColor = 'green'
+        document.getElementById('40002InstStat').style.backgroundColor = 'lightgreen'
+    }else if(document.getElementById('instStatC').innerText === 'maint'){
+        document.getElementById('40002InstStat').style.backgroundColor = 'skyblue'
+    }else if(document.getElementById('instStatC').innerText === 'reserved'){
+        document.getElementById('40002InstStat').style.backgroundColor = '#FFFF8F'
     }else{
-        document.getElementById('40002InstStat').style.backgroundColor = 'red'
+        document.getElementById('40002InstStat').style.backgroundColor = 'salmon'
         
     }
 }
@@ -103,9 +115,13 @@ function formFillD() {
 
 function statusLightD() {
     if (document.getElementById('instStatD').innerText === 'available'){
-        document.getElementById('40001InstStat').style.backgroundColor = 'green'
+        document.getElementById('40001InstStat').style.backgroundColor = 'lightgreen'
+    }else if(document.getElementById('instStatD').innerText === 'maint'){
+        document.getElementById('40001InstStat').style.backgroundColor = 'skyblue'
+    }else if(document.getElementById('instStatD').innerText === 'reserved'){
+        document.getElementById('40001InstStat').style.backgroundColor = '#FFFF8F'
     }else{
-        document.getElementById('40001InstStat').style.backgroundColor = 'red'
+        document.getElementById('40001InstStat').style.backgroundColor = 'salmon'
         
     }
 }
