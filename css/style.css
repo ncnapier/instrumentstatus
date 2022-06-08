@@ -24,7 +24,7 @@ main, .inst, header {
 
 
 }
-#state {
+#state, #stateB, #stateC, #stateD {
     display: flex;
     margin: auto;
 }
@@ -34,10 +34,10 @@ main, .inst, header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid red;
+    border: 1px solid black;
     
 }
-#submit {
+#submit, #submitB, #submitC, #submitD {
     height: 20px;
     width: 40px;
     background-color: lightgray;
@@ -54,4 +54,12 @@ h2 {
     width: 75%;
     font-size: 3rem;
     
+}
+h3 {
+    text-decoration: underline;
+}
+
+#instStat, #runDate, #endDate, #initE, #instStatB, #runDateB, #endDateB, #initEB, #instStatC, #runDateC, #endDateC, #initEC, #instStatD, #runDateD, #endDateD, #initED {
+    font-size: 1.2rem;
+    font-weight: 800;
 }
