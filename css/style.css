@@ -41,10 +41,12 @@ h1 {
 }
 a {
     text-decoration: none;
+    margin: auto, 10px;
 }
 nav {
     border: black 1px solid;
     width: 60%;
+    
     
 }
 main, .inst  {
@@ -112,7 +114,7 @@ h3 {
     font-weight: 800;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1040px) {
     .inst {
         width: 100%;
         
@@ -121,6 +123,20 @@ h3 {
         width: 100%;
         justify-content: center;
         
+    }
+    .acc {
+        width: 100%;
+    }
+    .form1 {
+        width: 65%;
+
+    }
+    #state {
+        width: 100%;
+        margin: auto;
+    }
+    .currentInstStatus{
+        width: 35%;
     }
     h1 {
         margin: auto;
@@ -131,9 +147,10 @@ h3 {
     li a {
         width: 30%;
         font-size: 2rem !important;
-        margin: auto !important;
+        margin: auto, 10px !important;
     }
     nav {
         width: 100%;
     }
 }
+
