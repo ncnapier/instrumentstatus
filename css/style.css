@@ -6,9 +6,48 @@ html {
     font-size: 62.5%;
 }
 header {
-    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
-main, .inst, header {
+
+nav li, nav li a {
+    list-style: none;
+    margin: 5%;
+    flex-wrap: nowrap;
+    color: black;
+    font-family: monospace;
+    font-size: 3rem;
+}
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    
+}
+#dmpk {
+    background-color: black;
+    color: white;
+    width: 45%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+
+}
+h1 {
+    margin-left: 20%;
+    font-size: 4rem;
+    font-family: monospace;
+}
+a {
+    text-decoration: none;
+}
+nav {
+    border: black 1px solid;
+    width: 60%;
+    
+}
+main, .inst  {
     display: flex;
     flex-wrap: wrap;
 }
@@ -75,6 +114,16 @@ h3 {
 
 @media screen and (max-width: 900px) {
     .inst {
+        width: 100%;
+        
+    }
+    #dmpk {
+        width: 100%;
+    }
+    header {
+        flex-wrap: wrap;
+    }
+    nav {
         width: 100%;
     }
 }
