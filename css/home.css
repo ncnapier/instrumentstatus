@@ -112,6 +112,13 @@ main {
     height: 350px;
 
 }
+#ins {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    
+    
+}
 #chatsE {
     width: 100%;
     height: 300px;
