@@ -87,6 +87,10 @@ main, .inst  {
     width: 40px;
     background-color: lightgray;
     border: black solid .5px;
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .currentInstStatus {
     display: flex;
