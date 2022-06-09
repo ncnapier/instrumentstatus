@@ -131,7 +131,7 @@ h3 {
         width: 65%;
 
     }
-    #state {
+    #state, #stateB, #stateC, #stateD {
         width: 100%;
         margin: auto;
     }
