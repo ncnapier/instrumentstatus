@@ -50,6 +50,11 @@ main, .inst, header {
     width: 200px;
 
 }
+
+.currentInstStatus span {
+    align-self: center;
+    
+}
 h2 {
     width: 75%;
     font-size: 3rem;
