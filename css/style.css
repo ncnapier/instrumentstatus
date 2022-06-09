@@ -24,6 +24,10 @@ main, .inst, header {
 
 
 }
+.acc {
+    width: 430.66px;
+    border: solid 1px black;
+}
 #state, #stateB, #stateC, #stateD {
     display: flex;
     margin: auto;
