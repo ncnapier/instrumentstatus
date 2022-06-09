@@ -51,7 +51,7 @@ nav {
 }
 main {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 #newscom {
@@ -83,7 +83,7 @@ main {
 }
 #chat {
     border: black solid 1px;
-    width: 40%;
+    width: 50%;
     height: 400px;
     display: flex;
     flex-direction: column;
