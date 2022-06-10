@@ -125,3 +125,19 @@ function statusLightD() {
         
     }
 }
+
+//default all status to green/ available unless reserved-
+
+function defGreen() {
+    document.getElementById('4500InstStat').style.backgroundColor = 'lightgreen'
+    document.getElementById('5500InstStat').style.backgroundColor = 'lightgreen'
+    document.getElementById('40002InstStat').style.backgroundColor = 'lightgreen'
+    document.getElementById('40001InstStat').style.backgroundColor = 'lightgreen'
+
+    document.getElementById('instStat').innerHTML = 'available'
+    document.getElementById('instStatB').innerHTML = 'available'
+    document.getElementById('instStatC').innerHTML = 'available'
+    document.getElementById('instStatD').innerHTML = 'available'
+}
+
+defGreen()
