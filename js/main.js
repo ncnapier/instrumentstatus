@@ -141,3 +141,5 @@ function defGreen() {
 }
 
 defGreen()
+
+//dmpk letter colors
