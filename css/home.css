@@ -178,3 +178,32 @@ main {
         width: 100%;
     }
 }
+
+#meeting {
+    width: 100%;
+    border: 1px solid black;
+    margin-top: 50px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}
+#meeting section {
+    height: 50px;
+    border-bottom: 1px solid black;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#meeting h3 {
+    font-size: 2.5rem;
+}
+#newscom section {
+    height: 50px;
+    border-bottom: 1px solid black;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
