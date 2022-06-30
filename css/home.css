@@ -88,6 +88,9 @@ main {
 #newscom span {
     font-size: 2rem;
 }
+#meeting h3 {
+    white-space: nowrap;
+}
 #submit {
     height: 20px;
     width: 40px;
@@ -206,6 +209,7 @@ main {
 
 #meeting h3 {
     font-size: 2.5rem;
+    white-space: nowrap;
 }
 #newscom section {
     height: 50px;
@@ -217,7 +221,8 @@ main {
 }
 
 @media screen and (min-width: 1041px) and (max-width: 1250px){
-    #newscom h3{
+    #newscom h3, #meeting h3{
         white-space: nowrap;
     }
+
 }
