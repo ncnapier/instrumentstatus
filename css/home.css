@@ -226,3 +226,14 @@ main {
     }
 
 }
+
+@media screen and (max-width: 420px){
+    .form1 {
+        width: 100% !important;
+    }
+    #state {
+        flex-direction: column !important;
+        display: flex;
+        flex-wrap: wrap !important;
+    }
+}

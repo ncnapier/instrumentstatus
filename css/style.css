@@ -191,3 +191,26 @@ h3 {
     }
 }
 
+@media screen and (max-width: 420px){
+    .form1 {
+        width: 100% !important;
+    }
+    #state, #stateB, #stateC, #stateD {
+        flex-direction: column !important;
+        display: flex;
+        flex-wrap: wrap !important;
+        width: 100% !important;
+    }
+    .currentInstStatus {
+        width: 100%;
+    }
+    .inst {
+        flex-direction: column !important;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    h2 {
+        font-size: 4vw;
+    }
+    
+}
