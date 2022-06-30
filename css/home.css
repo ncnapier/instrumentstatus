@@ -215,3 +215,8 @@ main {
     align-items: center;
 }
 
+@media screen and (min-width: 1041px) and (max-width: 1250px){
+    #newscom h3{
+        white-space: nowrap;
+    }
+}
