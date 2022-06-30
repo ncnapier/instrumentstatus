@@ -180,3 +180,4 @@ setTimeout(flashes, x*1000);
 }
 flashes();
 //setInterval(flashes(), 2000)
+
