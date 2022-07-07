@@ -53,3 +53,16 @@ setTimeout(flashes, x*1000);
 }
 flashes();
 //setInterval(flashes(), 2000)
+
+//accuweather API
+fetch("http://dataservice.accuweather.com/currentconditions/v1/335668?apikey=WlJdqhjA4jTuM6FQA5uH1Rr7GoyHhKYY&language=en-us&details=true")
+.then(res => res.json()) // parse response as JSON
+.then(data => {
+    console.log(data)
+  console.log(data[0].ApparentTemperature.Metric.Value)
+  document.querySelector("h4").innerText = `${data[0].WeatherText} and ${data[0].Temperature.Imperial.Value} F (${data[0].Temperature.Metric.Value} C)`
+})
+.catch(err => {
+    console.log(`error ${err}`)
+});
+
