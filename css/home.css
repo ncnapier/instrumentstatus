@@ -61,6 +61,10 @@ nav {
     
     
 }
+#weather {
+    display: flex;
+    justify-content: flex-end;
+}
 main {
     display: flex;
     justify-content: space-between;
