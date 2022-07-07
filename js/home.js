@@ -55,7 +55,7 @@ flashes();
 //setInterval(flashes(), 2000)
 
 //accuweather API
-fetch("http://dataservice.accuweather.com/currentconditions/v1/335668?apikey=WlJdqhjA4jTuM6FQA5uH1Rr7GoyHhKYY&language=en-us&details=true")
+fetch("https://dataservice.accuweather.com/currentconditions/v1/335668?apikey=WlJdqhjA4jTuM6FQA5uH1Rr7GoyHhKYY&language=en-us&details=true")
 .then(res => res.json()) // parse response as JSON
 .then(data => {
     console.log(data)
