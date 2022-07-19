@@ -10,10 +10,10 @@ function formFill() {
     document.getElementById('instStat').innerHTML = yyy
 
     aaa = document.getElementById('date').value 
-    document.getElementById('runDate').innerHTML = aaa
+    document.getElementById('runDate').innerHTML  = aaa
 
     bbb = document.getElementById('dateend').value 
-    document.getElementById('endDate').innerHTML = bbb
+    document.getElementById('endDate').innerHTML  = bbb
 }
 
 
@@ -106,7 +106,7 @@ function formFillD() {
     document.getElementById('instStatD').innerHTML = yyy
 
     aaa = document.getElementById('dateD').value 
-    document.getElementById('runDateD').innerHTML = aaa
+    document.getElementById('runDateD').innerHTML= aaa
 
     bbb = document.getElementById('dateendD').value 
     document.getElementById('endDateD').innerHTML = bbb
