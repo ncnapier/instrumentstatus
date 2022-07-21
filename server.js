@@ -26,10 +26,10 @@ MongoClient.connect(`mongodb+srv://nattydevs:%2321Reipan@cluster0.u4c49.mongodb.
         const dataCollection = db.collection('quotes')
         
         //adds whatever is typed into form to the mongodb 
-        app.post('/chat', (req, res) => {
+        app.post('/instrumentstatus/chat', (req, res) => {
             dataCollection.insertOne(req.body)
             .then(result => {
-                res.redirect('/')
+                res.redirect('/instrumentstatus')
             })
             .catch(error => console.error(error))
         })
