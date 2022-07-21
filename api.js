@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const app = express();
 const cors = require('cors');
 const { application } = require('express');
+var cookieParser = require('cookie-parser')
 // app.get('/home.css', function(req, res) {
 //     res.sendFile(__dirname + "/css/" + "home.css");
 //   });
@@ -13,8 +14,8 @@ app.get('/home.js', function(req, res) {
     res.sendFile(__dirname + "/js/" + "home.js")
 })
 app.use(bodyParser.urlencoded({ extended: true}))
-//const PORT = 2000
-const PORT = `https://ncnapier.github.io/instrumentstatus/`
+const PORT = 2000
+//const PORT = `https://ncnapier.github.io/instrumentstatus/`
 //tells the server to listen to requests on port 2000
 app.listen(process.env.PORT || PORT, function(){
     console.log(`listening on port ${PORT}`)
@@ -34,7 +35,9 @@ MongoClient.connect(`mongodb+srv://nattydevs:%2321Reipan@cluster0.u4c49.mongodb.
         
         //adds whatever is typed into form to the mongodb 
         app.post('/chat', (req, res) => {
+            //const UTCDate = (new Date()).toISOString().split("T")[0];
             dataCollection.insertOne(req.body)
+            
             .then(result => {
                 res.redirect('/')
                 res.json('quotes')
@@ -50,7 +53,7 @@ MongoClient.connect(`mongodb+srv://nattydevs:%2321Reipan@cluster0.u4c49.mongodb.
             })
             
         })
-        app.get('/api', (req, res) => {
+        app.get('/', (req, res) => {
             db.collection('quotes').find().toArray()
               .then(results => {
                 console.log(results)
