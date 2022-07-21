@@ -2,9 +2,9 @@ console.log('node test')
 const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
-app.get('/home.css', function(req, res) {
-    res.sendFile(__dirname + "/" + "home.css");
-  });
+// app.get('/home.css', function(req, res) {
+//     res.sendFile(__dirname + "/" + "home.css");
+//   });
 app.get('/home.js', function(req, res) {
     res.sendFile(__dirname + "/" + "home.js")
 })
