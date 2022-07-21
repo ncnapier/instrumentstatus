@@ -85,14 +85,29 @@ fetch("https://dataservice.accuweather.com/currentconditions/v1/335668?apikey=Wl
     document.getElementById('icon').style.border = "4px black solid"
 
   }
-  fetch(`mongodb+srv://nattydevs:%2321Reipan@cluster0.u4c49.mongodb.net/?retryWrites=true&w=majority`)
-.then(res => res.json()) // parse response as JSON
-.then(data => {
-    console.log(data)
-})
+
   document.querySelector("h4").innerText = `${data[0].WeatherText} and ${data[0].Temperature.Imperial.Value} F (${data[0].Temperature.Metric.Value} C)`
 })
 .catch(err => {
     console.log(`error ${err}`)
 });
 
+//fetch(`http://localhost:2000`)
+fetch('https://ncnapier.github.io/instrumentstatus/api.js')
+.then(res => res.json()) // parse response as JSON
+.then(results =>{
+  let arr = ""
+  function checkArr(results){
+    for(i = 0; i < results.length; i++){
+      arr += results[i].statD + ":"    + results[i].chats     + "(" + currentDate + ")"
+    }
+  }
+  checkArr(results)
+  console.log(results)
+  document.getElementById('chatsE').innerText =  arr
+})
+ 
+
+// .then(results => {
+//     console.log(results)
+// })
