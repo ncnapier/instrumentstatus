@@ -5,6 +5,9 @@ const app = express();
 app.get('/home.css', function(req, res) {
     res.sendFile(__dirname + "/" + "home.css");
   });
+app.get('/home.js', function(req, res) {
+    res.sendFile(__dirname + "/" + "home.js")
+})
 app.use(bodyParser.urlencoded({ extended: true}))
 //const PORT = 8000
 const PORT = `https://ncnapier.github.io/instrumentstatus/`
