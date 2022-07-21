@@ -14,7 +14,7 @@
 <body>
     <header>
         <section id="dmpk">
-        <h1><span id ="D">D</span><span id="M">M</span><span id="P">P</span><span id="K">K</span> Lab</h1>
+        <h1><span id ="D">D</span><span id="M">M</span><span id="P">P</span><span id="K">K</span> Lab2</h1>
         </section>
         <nav>
             <ul>
@@ -34,7 +34,17 @@
         <section id="chat">
             <h3>Chat: </h3>
             <section id="two">
-            <span id="chatsE"></span>
+                <ul class="quotes">
+                    <!-- Loop through quotes -->
+                    <% for(var i = 0; i < quotes.length; i++) {%>
+                      <li class="quote">
+                        <!-- Output name from the iterated quote object -->
+                        <span><%= quotes[i].statD %></span>:
+                        <!-- Output quote from the iterated quote object -->
+                        <span><%= quotes[i].chats %></span>
+                      </li>
+                    <% } %>
+                  </ul>
             <section id="ins">
             <form action="/chat" method="POST">
                 <label for="chats">New Message:    </label>
