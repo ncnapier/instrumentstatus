@@ -12,8 +12,8 @@ app.get('/home.js', function(req, res) {
     res.sendFile(__dirname + "/js/" + "home.js")
 })
 app.use(bodyParser.urlencoded({ extended: true}))
-const PORT = 8000
-//const PORT = `https://ncnapier.github.io/instrumentstatus/`
+//const PORT = 8000
+const PORT = `https://ncnapier.github.io/instrumentstatus/`
 //tells the server to listen to requests on port 8000
 app.listen(process.env.PORT || PORT, function(){
     console.log(`listening on port ${PORT}`)
