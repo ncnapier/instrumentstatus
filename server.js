@@ -30,8 +30,28 @@ MongoClient.connect(`mongodb+srv://nattydevs:%2321Reipan@cluster0.u4c49.mongodb.
         console.log('Connected to Database')
         const db = client.db('new-database')
         const dataCollection = db.collection('quotes')
+        const dataInst = db.collection('instruments')
         
         //adds whatever is typed into form to the mongodb 
+        app.post('/chat', (req, res) => {
+            dataCollection.insertOne(req.body)
+            .then(result => {
+                res.redirect('/')
+                res.json('quotes')
+            })
+            
+            .catch(error => console.error(error))
+        })
+        app.post('/instSend', (req, res) => {
+            dataInst.insertOne(req.body)
+            .then(result => {
+                res.redirect('/instrument.html')
+                //res.json('instSend')
+            })
+            .then(result =>{
+                //res.json('instSend')
+            })
+        })
         app.post('/chat', (req, res) => {
             dataCollection.insertOne(req.body)
             .then(result => {
@@ -68,6 +88,19 @@ MongoClient.connect(`mongodb+srv://nattydevs:%2321Reipan@cluster0.u4c49.mongodb.
                 console.log(results)
                 res.json(results)  
           })
+          })
+          app.get('/instrument.html', (req, res) => {
+            db.collection('quotes').find().toArray()
+              .then(results => {
+                console.log(results)
+                //res.json(results)
+                
+                //res.render('index.ejs', {quotes: results})
+                res.sendFile(__dirname + '/instrument.html')
+                
+              })
+              .catch(error => console.error(error))
+            // ...
           })
           
                 

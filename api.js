@@ -32,6 +32,7 @@ MongoClient.connect(`mongodb+srv://nattydevs:%2321Reipan@cluster0.u4c49.mongodb.
         console.log('Connected to Database')
         const db = client.db('new-database')
         const dataCollection = db.collection('quotes')
+        const dataInst = db.collection('instruments')
         
         //adds whatever is typed into form to the mongodb 
         app.post('/chat', (req, res) => {
@@ -52,6 +53,19 @@ MongoClient.connect(`mongodb+srv://nattydevs:%2321Reipan@cluster0.u4c49.mongodb.
                 
             })
             
+        })
+        app.post('/instSend', (req, res) => {
+            dataInst.insertOne(req.body)
+            .then(result => {
+                res.redirect('/instrument.html')
+                res.json('instSend')
+            })
+        })
+        app.get('/instStat', (req, res) => {
+            db.collection('instruments').find().toArray()
+            .then(results => {
+                res.json(results)
+            })
         })
         app.get('/', (req, res) => {
             db.collection('quotes').find().toArray()

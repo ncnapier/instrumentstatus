@@ -18,7 +18,7 @@
         </section>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="instrument.html">Instruments</a></li>
                 <li><a href="#">Projects</a></li>
             </ul>
@@ -35,10 +35,10 @@
             
             <section class="form1">
                 
-            <form>
+              <form action="/instSend" method="POST">
                 <label for="stat">Instrument Status:</label>
                 <select id="stat" name="stat">
-                  <option value="available">Available</option>
+                  <!-- <option value="available">Available</option> -->
                   <option value="inuse">In Use</option>
                   <option value="reserved">Reserved</option>
                   <option value="maint">Maintenance</option>
@@ -54,22 +54,33 @@
                 <input type="datetime-local" id="dateend" name="dateend"></input>
             <br><br>
             
-                  <label for="init">User Initials</label>
-                  <input type="text" id="init" name="init">
+                  <!-- <label for="init">User Initials</label> -->
+                  
+                  <label for="init" id="init" name="init">User</label>
+                  <select  id="init" name="init">
+                    <option>Nathaniel</option>
+                    <option>Katherine</option>
+                    <option>Sichen</option>
+                    <option>Chandra</option>
+                    <option>Irene</option>
+                    <option>Olivier</option>
+                    <option>Lauren</option>
+                    </select>
+                  
                   <br><br>
-                  <div id="submit">Submit<div>
+                  <button id="submit" type="submit">Submit</button>
               </form>
               
             </section>
-            <section class="currentInstStatus" id="4500InstStat">
+            <ul class="currentInstStatus" id="4500InstStat"></ul>
             <section id="inputs">
-                <h3>Status: </h3>
+                <!-- <h3>Status: </h3>
                 
                 <h3>Run Date: </h3>
                 
                 <h3>End Date: </h3>
                 
-                <h3>User: </h3>
+                <h3>User: </h3> -->
                 
             </section>
             <section id="infos">
