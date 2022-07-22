@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./css/home.css" rel="stylesheet">
+    <link href="./css/home.css" rel="stylesheet" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet">
@@ -13,14 +13,13 @@
 </head>
 <body>
     <header>
-       
         <section id="dmpk">
-        <h1><span id ="D">D</span><span id="M">M</span><span id="P">P</span><span id="K">K</span> Lab</h1>
+        <h1><span id ="D">C</span><span id="M">M</span><span id="P">P</span><span id="K">K</span> Lab2</h1>
         </section>
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="./instrument.html">Instruments</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="instrument.html">Instruments</a></li>
                 <li><a href="#">Projects</a></li>
             </ul>
         </nav>
@@ -35,14 +34,21 @@
         <section id="chat">
             <h3>Chat: </h3>
             <section id="two">
-            <ul id="chatsE"></ul>
+                <ul class="quotes">
+                    <!-- Loop through quotes -->
+                    <% for(var i = 0; i < quotes.length; i++) {%>
+                      <li class="quote">
+                        <!-- Output name from the iterated quote object -->
+                        <span><%= quotes[i].statD %></span>:
+                        <!-- Output quote from the iterated quote object -->
+                        <span><%= quotes[i].chats %></span>
+                      </li>
+                    <% } %>
+                  </ul>
             <section id="ins">
             <form action="/chat" method="POST">
                 <label for="chats">New Message:    </label>
                 <label for="statD"> </label>
-                
-                
-                
                   <select id="statD" name="statD">
                     <option value="Olivier">Olivier</option>
                     <option value="Katherine">Katherine</option>
@@ -51,9 +57,8 @@
                     <option value="Nathaniel">Nathaniel</option>
                     <option value="Sichen">Sichen</option>
                   <input type="text" id="chats" name="chats">
-                  <input type="text" id="time" name="time" value="">
                   
-                  <button id="submit" type="submit">Submit</button>
+                  <button type="submit">Submit</button>
                   <!--<div id="submit">Submit<div>-->
 
             </form>
