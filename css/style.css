@@ -71,6 +71,7 @@ main, .inst  {
    
 }
 
+
 .inst {
     border: 1px solid black;
     width: 49%;
@@ -80,6 +81,7 @@ main, .inst  {
     align-items: center;
     justify-content: space-around;
     margin: 5px;
+    flex-wrap: nowrap !important;
 
 
 }
@@ -96,7 +98,7 @@ main, .inst  {
     
     
 }
-.form1, .currentInstStatus {
+.form1 {
     
     width: 100%;
     display: flex !important;
@@ -110,13 +112,42 @@ main, .inst  {
     padding: 10px;
     
 }
+.Nathaniel {
+    background-color: goldenrod;
+    width: 100%;
+}
+.Sichen {
+    background-color: rgb(135, 190, 235);
+    width: 100%;
+}
+.Katherine {
+    background-color: rgb(218, 32, 156);
+    width: 100%;
+}
+.Olivier {
+    background-color: rgb(139, 231, 127);
+    width: 100%;
+}
+.Chandra {
+    background-color: rgb(218, 131, 32);
+    width: 100%;
+}
+.Irene {
+    background-color: rgb(32, 181, 218);
+    width: 100%;
+}
+.Lauren {
+    background-color: rgb(223, 151, 219);
+    width: 100%;
+}
 #infos{
     width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 100%;
+    
 }
+
 #inputs{
     width:30%;
     display: flex;
@@ -137,9 +168,22 @@ main, .inst  {
     display: flex;
     flex-direction: column;
     align-items: flex-start !important;
+    border-radius: 5%;
+    overflow: scroll;
+    height: 25%;
+    
    
     
 
+}
+.currentInstStatus ul{
+    display: flex;
+    flex-direction: column;
+    border-radius: 5%;
+    list-style: none;
+}
+.currentInstStatus li {
+    list-style: none;
 }
 
 .currentInstStatus span {
@@ -155,7 +199,7 @@ main, .inst  {
     border-radius: 5%;
     padding: 10px;
     background-color: skyblue;
-    
+    height: fit-content;
     justify-content: space-evenly;
 }
 h2 {
@@ -173,9 +217,6 @@ h3 {
     width: 40%;
     
 
-}
-.test{
-    color: black;
 }
 
 #instStat, #runDate, #endDate, #initE, #instStatB, #runDateB, #endDateB, #initEB, #instStatC, #runDateC, #endDateC, #initEC, #instStatD, #runDateD, #endDateD, #initED {
@@ -200,6 +241,7 @@ h3 {
     #state, #stateB, #stateC, #stateD {
         width: 100%;
         margin: auto;
+        height: 75%;
     }
     
     h1 {

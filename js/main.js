@@ -1,20 +1,20 @@
 //for 4500 functioning:
-document.getElementById('submit').addEventListener('click', formFill)
+//document.getElementById('submit').addEventListener('click', formFill)
 document.getElementById('submit').addEventListener('click', statusLight)
 
-function formFill() {
-    xxx = document.getElementById('init').value 
-    document.getElementById('initE').innerHTML = xxx
+// function formFill() {
+//     xxx = document.getElementById('init').value 
+//     document.getElementById('initE').innerHTML = xxx
 
-    yyy = document.getElementById('stat').value 
-    document.getElementById('instStat').innerHTML = yyy
+//     yyy = document.getElementById('stat').value 
+//     document.getElementById('instStat').innerHTML = yyy
 
-    aaa = document.getElementById('date').value 
-    document.getElementById('runDate').innerHTML  = aaa
+//     aaa = document.getElementById('date').value 
+//     document.getElementById('runDate').innerHTML  = aaa
 
-    bbb = document.getElementById('dateend').value 
-    document.getElementById('endDate').innerHTML  = bbb
-}
+//     bbb = document.getElementById('dateend').value 
+//     document.getElementById('endDate').innerHTML  = bbb
+// }
 
 
 function statusLight() {
@@ -133,6 +133,8 @@ function defGreen() {
     document.getElementById('5500InstStat').style.backgroundColor = 'lightgreen'
     document.getElementById('40002InstStat').style.backgroundColor = 'lightgreen'
     document.getElementById('40001InstStat').style.backgroundColor = 'lightgreen'
+// shows if inst is available:
+
 
     document.getElementById('instStat').innerHTML = 'available'
     document.getElementById('instStatB').innerHTML = 'available'
@@ -181,3 +183,102 @@ setTimeout(flashes, x*1000);
 flashes();
 //setInterval(flashes(), 2000)
 
+//instrument status api
+fetch(`https://dmpk-instrument-api.herokuapp.com/api.js`)
+//fetch('https://ncnapier.github.io/instrumentstatus/api.js')
+.then(res => res.json()) // parse response as JSON
+.then(results =>{
+  let arr = ""
+  
+//   function checkArr(results){
+//     for(i = 0; i < results.length; i++){
+//       const ul = document.getElementById('chatsE')
+//       const li = document.createElement("li")
+//       li.appendChild(document.createTextNode(results[i].statD + ":"  + "          "  + results[i].chats + "(" + results[i].time + ")"))    //+ "(" + currentDate + ")"))
+//       ul.appendChild(li)
+       
+//     }
+//   }
+  //checkArr(results)
+
+  //create a ul- each li of ul is a ul2- li of ul2 will be stust, rundate, enddate, useer
+  
+  function checkArr(results){
+    let currentDate = new Date();
+    
+    console.log(currentDate.toLocaleDateString('en-GB').split('/').reverse().join(''))
+    for(i = 0; i < results.length; i++){
+        let arrDate = results[i].dateend.split('')
+        let yearEnding = arrDate.slice(0,4)
+        let monthEnding = arrDate.slice(5,7)
+        let dayEnding = arrDate.slice(8,10)
+        let dateEnding = yearEnding.concat(monthEnding, dayEnding).join('')
+
+        console.log(dateEnding)
+        if(dateEnding >= currentDate.toLocaleDateString('en-GB').split('/').reverse().join('')){
+           
+      const ul = document.getElementById('4500InstStat')
+      const li1 = document.createElement("li")
+      const li2 = document.createElement("li")
+      const li3 = document.createElement("li")
+      const li4 = document.createElement("li")
+      //const ul2 = document.createElement('ul')
+      li1.appendChild(document.createTextNode("Satus:" + results[i].stat ))
+      li2.appendChild(document.createTextNode("Run Date:" + results[i].date)) 
+      li3.appendChild(document.createTextNode("End Date:" + results[i].dateend))
+      li4.appendChild(document.createTextNode("User:" + results[i].init))              
+      ul.appendChild(li1)
+      ul.appendChild(li2)
+      ul.appendChild(li3)
+      ul.appendChild(li4)
+      li1.setAttribute('class', results[i].init)
+      li2.setAttribute('class', results[i].init)
+      li3.setAttribute('class', results[i].init)
+      li4.setAttribute('class', results[i].init)
+      //document.getElementsByClassName('li.nn').style.backgroundColor = 'red'
+      
+        }
+    }
+    
+  }
+  
+  checkArr(results)
+  
+  function instStatDisplay(){
+    
+    for(i = 0; i < results.length; i++){
+        let currentDate = new Date();
+        let arrDate = results[i].dateend.split('')
+        let yearEnding = arrDate.slice(0,4)
+        let monthEnding = arrDate.slice(5,7)
+        let dayEnding = arrDate.slice(8,10)
+        let dateEnding = yearEnding.concat(monthEnding, dayEnding).join('')
+        if(Math.max(dateEnding) >= currentDate.toLocaleDateString('en-GB').split('/').reverse().join('')){
+            document.getElementById('instStat').innerHTML = results[i].stat
+        }else{
+            document.getElementById('instStat').innerHTML = 'available'
+        }
+    }
+}
+instStatDisplay()
+
+  //functon fills the instrument status form
+  function formFill() {
+    xxx = results[0].init 
+    document.getElementById('initE').innerHTML = xxx
+
+    yyy = results[0].stat 
+    document.getElementById('instStat').innerHTML = yyy
+
+    aaa = results[0].date 
+    document.getElementById('runDate').innerHTML  = aaa
+
+    bbb = results[0].dateend 
+    document.getElementById('endDate').innerHTML  = bbb
+}
+//formFill()
+statusLight()
+
+  console.log(results)
+  //document.getElementById('chatsE').innerText =  arr
+})
