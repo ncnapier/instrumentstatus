@@ -35,7 +35,7 @@ MongoClient.connect(`mongodb+srv://nattydevs:%2321Reipan@cluster0.u4c49.mongodb.
         const dataInst = db.collection('instruments')
         
         //adds whatever is typed into form to the mongodb 
-        app.post('/chat', (req, res) => {
+        app.post('https://dmpk-instrument-api.herokuapp.com/api.js/chat', (req, res) => {
             //const UTCDate = (new Date()).toISOString().split("T")[0];
             dataCollection.insertOne(req.body)
             
@@ -46,7 +46,7 @@ MongoClient.connect(`mongodb+srv://nattydevs:%2321Reipan@cluster0.u4c49.mongodb.
             
             .catch(error => console.error(error))
         })
-        app.get('/chat', (req, res) => {
+        app.get('https://dmpk-instrument-api.herokuapp.com/api.js/chat', (req, res) => {
             db.collection('quotes').find().toArray()
             .then(results => {
                 console.log(results)
@@ -54,14 +54,14 @@ MongoClient.connect(`mongodb+srv://nattydevs:%2321Reipan@cluster0.u4c49.mongodb.
             })
             
         })
-        app.post('/instSend', (req, res) => {
+        app.post('https://dmpk-instrument-api.herokuapp.com/api.js/instSend', (req, res) => {
             dataInst.insertOne(req.body)
             .then(result => {
                 res.redirect('/instrument.html')
                 res.json('instSend')
             })
         })
-        app.get('/instStat', (req, res) => {
+        app.get('https://dmpk-instrument-api.herokuapp.com/api.js/instStat', (req, res) => {
             db.collection('instruments').find().toArray()
             .then(results => {
                 res.json(results)
