@@ -182,7 +182,9 @@ setTimeout(flashes, x*1000);
 }
 flashes();
 //setInterval(flashes(), 2000)
-
+fetch(`api.js`)
+    .then (res => res.json())
+    .then (console.log(results))
 //instrument status api
 fetch(`api.js`)
 //fetch(`https://dmpk-instrument-api.herokuapp.com/api.js`)
