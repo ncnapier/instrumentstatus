@@ -54,7 +54,7 @@ MongoClient.connect(`mongodb+srv://nattydevs:%2321Reipan@cluster0.u4c49.mongodb.
         const dataInst = db.collection('instruments')
         
         //adds whatever is typed into form to the mongodb 
-        app.post('https://ncnapier.github.io/instrumentstatus/chat', (req, res) => {
+        app.post('/chat', (req, res) => {
             //const UTCDate = (new Date()).toISOString().split("T")[0];
             dataCollection.insertOne(req.body)
             
@@ -87,14 +87,14 @@ MongoClient.connect(`mongodb+srv://nattydevs:%2321Reipan@cluster0.u4c49.mongodb.
         //     })
             
         // })
-        app.post('https://ncnapier.github.io/instrumentstatus/instsend', (req, res) => {
+        app.post('/instsend', (req, res) => {
             dataInst.insertOne(req.body)
             .then(result => {
                 res.redirect('https://ncnapier.github.io/instrumentstatus/instrument.html')
                 res.json('instruments')
             })
         })
-        app.get('https://ncnapier.github.io/instrumentstatus/api.js', (req, res) => {
+        app.get('/api/inst', (req, res) => {
             db.collection('instruments').find().toArray()
             .then(results => {
                 res.json(results)
@@ -106,7 +106,7 @@ MongoClient.connect(`mongodb+srv://nattydevs:%2321Reipan@cluster0.u4c49.mongodb.
         //         res.json(results)
         //     })
         // })
-        app.get('/', (req, res) => {
+        app.get('/api/chat', (req, res) => {
             db.collection('quotes').find().toArray()
               .then(results => {
                 console.log(results)
