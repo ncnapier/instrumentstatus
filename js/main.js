@@ -188,7 +188,7 @@ fetch(`api.js`)
     console.log(results)
 })
 //instrument status api
-fetch(`api.js`)
+fetch(`https://ncnapier.github.io/instrumentstatus/inst`)
 //fetch(`https://dmpk-instrument-api.herokuapp.com/api.js`)
 //fetch('./../api.js')
     .then(res => res.json()) // parse response as JSON
