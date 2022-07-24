@@ -36,7 +36,7 @@ app.use(function (req, res, next) {
     // Pass to next layer of middleware
     next();
 });
-app.listen(process.env.PORT, function(){//|| PORT, function(){
+app.listen(`https://ncnapier.github.io/instrumentstatus/` || process.env.PORT, function(){//|| PORT, function(){
     console.log(`listening on port ${PORT}`)
 })
 //sends index.html when localhost:8000/ is requested by the browser
@@ -94,7 +94,7 @@ MongoClient.connect(`mongodb+srv://nattydevs:%2321Reipan@cluster0.u4c49.mongodb.
                 res.json('instruments')
             })
         })
-        app.get('/api.js', (req, res) => {
+        app.get('/inst', (req, res) => {
             db.collection('instruments').find().toArray()
             .then(results => {
                 res.json(results)
@@ -106,7 +106,7 @@ MongoClient.connect(`mongodb+srv://nattydevs:%2321Reipan@cluster0.u4c49.mongodb.
         //         res.json(results)
         //     })
         // })
-        app.get('/api/chat', (req, res) => {
+        app.get('/chat', (req, res) => {
             db.collection('quotes').find().toArray()
               .then(results => {
                 console.log(results)
