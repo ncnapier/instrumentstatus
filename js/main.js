@@ -184,10 +184,11 @@ flashes();
 //setInterval(flashes(), 2000)
 
 //instrument status api
+fetch(`process.env.PORT`)
 //fetch(`https://dmpk-instrument-api.herokuapp.com/api.js`)
-fetch('./../api.js')
-.then(res => res.json()) // parse response as JSON
-.then(results =>{
+//fetch('./../api.js')
+    .then(res => res.json()) // parse response as JSON
+    .then(results =>{
   let arr = ""
   
 //   function checkArr(results){
