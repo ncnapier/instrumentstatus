@@ -94,7 +94,7 @@ MongoClient.connect(`mongodb+srv://nattydevs:%2321Reipan@cluster0.u4c49.mongodb.
                 res.json('instruments')
             })
         })
-        app.get('/api/inst', (req, res) => {
+        app.get('/api.js', (req, res) => {
             db.collection('instruments').find().toArray()
             .then(results => {
                 res.json(results)
