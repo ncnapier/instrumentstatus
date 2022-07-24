@@ -97,7 +97,7 @@ fetch("https://dataservice.accuweather.com/currentconditions/v1/335668?apikey=Wl
 });
 
 //fetch(`https://ncnapier.github.io/instrumentstatus/api.js`)
-fetch('https://ncnapier.github.io/instrumentstatus/api.js')
+fetch('https://ncnapier.github.io/instrumentstatus/api/chat')
 .then(res => res.json()) // parse response as JSON
 .then(results =>{
   let arr = ""
