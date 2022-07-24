@@ -9,7 +9,7 @@ const cors = require('cors');
 //     res.sendFile(__dirname + "/css/" + "home.css");
 //   });
 //app.use(cors())
-app.use(express.static(__dirname + '/public'));
+//app.use(express.static(__dirname + '/public'));
 // app.get('/home.js', function(req, res) {
 //     res.sendFile(__dirname + "/js/" + "home.js")
 // })
