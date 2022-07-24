@@ -185,7 +185,7 @@ flashes();
 
 //instrument status api
 //fetch(`https://dmpk-instrument-api.herokuapp.com/api.js`)
-fetch('/../api.js')
+fetch('./../api.js')
 .then(res => res.json()) // parse response as JSON
 .then(results =>{
   let arr = ""
