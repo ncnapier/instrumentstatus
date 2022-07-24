@@ -184,7 +184,7 @@ flashes();
 //setInterval(flashes(), 2000)
 
 //instrument status api
-fetch(`https://dmpk-instrument-api.herokuapp.com/api.js/inststat`)
+fetch(`https://dmpk-instrument-api.herokuapp.com/inststat`)
 //fetch('https://ncnapier.github.io/instrumentstatus/api.js')
 .then(res => res.json()) // parse response as JSON
 .then(results =>{

@@ -65,41 +65,33 @@ MongoClient.connect(`mongodb+srv://nattydevs:%2321Reipan@cluster0.u4c49.mongodb.
             
             .catch(error => console.error(error))
         })
-        app.get('https://ncnapier.github.io/instrumentstatus/chat', (req, res) => {
-            dataCollection.insertOne(req.body)
-            db.collection('quotes').find().toArray()
-            .then(results => {
-                console.log(results)
+        // app.get('https://ncnapier.github.io/instrumentstatus/', (req, res) => {
+        //     dataCollection.insertOne(req.body)
+        //     db.collection('quotes').find().toArray()
+        //     .then(results => {
+        //         console.log(results)
                 
-            })
-            .then(result => {
-                res.redirect('https://ncnapier.github.io/instrumentstatus/index.html')
-                res.json('quotes')
-            })
+        //     })
+        //     .then(result => {
+        //         res.redirect('https://ncnapier.github.io/instrumentstatus/index.html')
+        //         res.json('quotes')
+        //     })
             
             
-        })
-        app.get('https://ncnapier.github.io/instrumentstatus/index.html', (req, res) => {
-            db.collection('quotes').find().toArray()
-            .then(results => {
-                console.log(results)
+        // })
+        // app.get('https://ncnapier.github.io/instrumentstatus/index.html', (req, res) => {
+        //     db.collection('quotes').find().toArray()
+        //     .then(res => {
+        //         console.log(res)
                 
-            })
+        //     })
             
-        })
-        app.get('https://ncnapier.github.io/instrumentstatus/api.js', (req, res) => {
-            db.collection('quotes').find().toArray()
-            .then(results => {
-                console.log(results)
-                
-            })
-            
-        })
+        // })
         app.post('https://ncnapier.github.io/instrumentstatus/instsend', (req, res) => {
             dataInst.insertOne(req.body)
             .then(result => {
                 res.redirect('https://ncnapier.github.io/instrumentstatus/instrument.html')
-                res.json('instSend')
+                res.json('instruments')
             })
         })
         app.get('https://ncnapier.github.io/instrumentstatus/api.js', (req, res) => {
@@ -108,12 +100,12 @@ MongoClient.connect(`mongodb+srv://nattydevs:%2321Reipan@cluster0.u4c49.mongodb.
                 res.json(results)
             })
         })
-        app.get('https://ncnapier.github.io/instrumentstatus/inststat', (req, res) => {
-            db.collection('instruments').find().toArray()
-            .then(results => {
-                res.json(results)
-            })
-        })
+        // app.get('https://ncnapier.github.io/instrumentstatus/instrument.html', (req, res) => {
+        //     db.collection('instruments').find().toArray()
+        //     .then(results => {
+        //         res.json(results)
+        //     })
+        // })
         app.get('/', (req, res) => {
             db.collection('quotes').find().toArray()
               .then(results => {
