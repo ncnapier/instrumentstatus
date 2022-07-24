@@ -188,8 +188,8 @@ fetch(`api.js`)
     console.log(results)
 })
 //instrument status api
-fetch('mongodb+srv://nattydevs:%2321Reipan@cluster0.u4c49.mongodb.net/?retryWrites=true&w=majority')
-//fetch(`https://dmpk-instrument-api.herokuapp.com/api.js`)
+//fetch('mongodb+srv://nattydevs:%2321Reipan@cluster0.u4c49.mongodb.net/?retryWrites=true&w=majority')
+fetch(`https://dmpk-instrument-api.herokuapp.com/api/inst`)
 //fetch('./../api.js')
     .then(res => res.json()) // parse response as JSON
     .then(results =>{
